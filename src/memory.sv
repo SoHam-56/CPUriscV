@@ -1,17 +1,17 @@
 module memory #(
-    parameters WIDTH = 32) 
+    parameter WIDTH = 32) 
 (
     input clk,
     input rst,
     input LD,
     input [WIDTH - 1:0] datain,
-    output [WIDTH - 1:0] out
+    output reg [WIDTH - 1:0] out
 );
 
 always @(negedge clk) begin
 
     if (!rst) begin
-        out <= {WIDTH(1'b0)};
+        out <= {WIDTH{1'b0}};
     end
     else if (!LD) begin
         out <= datain;
