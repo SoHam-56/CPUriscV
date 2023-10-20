@@ -1,6 +1,6 @@
-TEST_BENCH = memory_tb
+TEST_BENCH = register_tb
 
-MODULE = ../src/memory.sv
+MODULE = ../src/register.sv
 
 sim:
 	@echo "Simulation using IVerilog"

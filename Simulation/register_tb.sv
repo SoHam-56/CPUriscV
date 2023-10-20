@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`include "../src/memory.sv"
+`include "../src/register.sv"
 
 module memtest;
     
@@ -10,7 +10,7 @@ module memtest;
     reg [WIDTH-1:0] datain;
     wire [WIDTH-1:0] dataout;
 
-    memory #(.WIDTH(WIDTH)) dut 
+    register #(.WIDTH(WIDTH)) dut 
     (  
         .rst(rst), 
         .clk(clk), 
@@ -23,7 +23,7 @@ module memtest;
     always #100 clk = ~clk;
 
     initial begin
-        $dumpfile("memory_tb.vcd");
+        $dumpfile("register_tb.vcd");
         $dumpvars;
 
         $display("%d %m: Starting Simulation....", $stime);

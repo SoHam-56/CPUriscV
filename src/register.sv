@@ -1,4 +1,4 @@
-module memory #(
+module register #(
     parameter WIDTH = 32) 
 (
     input clk,
